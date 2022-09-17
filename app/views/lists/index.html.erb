@@ -1,5 +1,26 @@
-<h1>List of movie</h1>
+<div class="container">
 
-<% @lists.each do |list|%>
-<%= list.name %>
-<% end %>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Movies List</a>
+    <div>
+      <button type="button" class="btn btn-light">My List</button>
+      <button type="button" class="btn btn-light">New List</button>
+    </div>
+  </div>
+</nav>
+<div>
+
+<% Movie.all.each do |m|%>
+  <div class="card mt-3" style="width: 18rem;">
+    <img src=<%= m.poster_url  %> class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= m.title %></h5>
+      <p class="card-text"><%= m.overview %></p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+</div>
